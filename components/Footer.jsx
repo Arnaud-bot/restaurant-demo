@@ -8,8 +8,12 @@ import Link from "next/link"
 
 
 
+// Footer Component - Site footer with links and copyright
+// Features: Background image, three-column layout, social links
 const Footer = () => {
   return (
+    // Footer with background image
+    // Fades in from bottom when scrolled into view
     <motion.footer
       variants={fadeIn("up", 0.2)}
       initial="hidden"
@@ -30,9 +34,10 @@ const Footer = () => {
               />
             </Link>
           </div>
-          {/* grid items */}
+          {/* Footer Links Grid */}
+          {/* Responsive: 1 column on mobile, 3 columns on desktop */}
           <div className="flex-1 grid grid-cols-1 xl:grid-cols-3 gap-[50px] mb-8 xl:mb-16">
-            {/* blog */}
+            {/* Blog Links Section */}
             <div>
               <h4 className="font-semibold mb-5">Blog</h4>
                 <ul className="flex flex-col gap-y-6 text-sm">
@@ -58,7 +63,7 @@ const Footer = () => {
                   </li>
                 </ul>
             </div>
-            {/* item */}
+            {/* New Items Section */}
             <div>
               <h4 className="font-semibold mb-5">New Item</h4>
                 <ul className="flex flex-col gap-y-6 text-sm">
@@ -84,7 +89,7 @@ const Footer = () => {
                   </li>
                 </ul>
             </div>
-            {/* socials */}
+            {/* Social Media Links Section */}
             <div>
               <h4 className="font-semibold mb-5">Socials</h4>
               <ul className="flex flex-col gap-y-6 text-sm">
@@ -107,7 +112,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        {/* copyright */}
+        {/* Copyright Section */}
+        {/* border-t: Top border with semi-transparent white */}
+        {/* text-white/60: 60% opacity white text */}
         <div className="py-4 border-t border-white/10">
           <p className="text-white/60 text-center text-sm">
             Copyright &copy; W'Food 2023

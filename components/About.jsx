@@ -8,10 +8,16 @@ import { Button } from "./ui/button"
 
 
 
+// About Component - Restaurant information section
+// Features: Two-column layout (text + image) with animations
 const About = () => {
   return (
+    // Grid Layout: 1 column on mobile, 2 columns on desktop
+    // items-center: Vertically centers content
     <section className="grid grid-cols-1 xl:grid-cols-2 gap-x-[74px] p-8 md:p-12 xl:p-0 items-center" id="about">
-      {/* text */}
+      {/* Text Content */}
+      {/* Fades in from right with 0.2s delay */}
+      {/* xl:pl-[135px]: Large left padding on desktop for spacing */}
       <motion.div 
         variants={fadeIn("right", 0.2)}
         initial="hidden"
@@ -33,7 +39,9 @@ const About = () => {
         </p>
         <Button>Read more</Button>
       </motion.div>
-      {/* Image */}
+      {/* About Image */}
+      {/* Fades in from left with 0.4s delay (staggered animation) */}
+      {/* hidden xl:flex: Hidden on mobile, visible on desktop */}
       <motion.div
         variants={fadeIn("left", 0.4)}
         initial="hidden"

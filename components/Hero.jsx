@@ -1,20 +1,38 @@
+// "use client" directive - marks this as a Client Component
+// Required for components using React hooks, browser APIs, or event listeners
+// Client components are rendered on the client-side and can be interactive
 "use client"
 
+// Import animation variants - reusable animation configurations for Framer Motion
 import { fadeIn } from "@/variants"
+// Framer Motion - powerful animation library for React
 import { motion } from "framer-motion"
+// Next.js Image component - automatically optimizes images (lazy loading, responsive, WebP conversion)
 import Image from "next/image"
 import { Button } from "./ui/button"
 
 
 
+// Hero Section Component
+// The main hero/banner section at the top of the homepage
+// Features animated text and images using Framer Motion
 const Hero = () => {
   return (
+    // Section with background image, responsive height, and padding
+    // id="home" is used for smooth scrolling navigation
     <section className="bg-hero bg-no-repeat relative xl:bg-cover xl:h-[1098px] py-40 pb-32 xl:py-0" id="home">
       <div className="container mx-auto">
         {/* text & image */}
         <div className="flex items-center xl:h-[960px]">
-          {/* text */}
+          {/* Hero Text Content */}
+          {/* Responsive width: full on mobile, max 460px on desktop */}
+          {/* Text alignment: centered on mobile, left-aligned on desktop */}
           <div className="w-full xl:max-w-[460px] text-center xl:text-left">
+            {/* Framer Motion h1 with fade-in animation from bottom */}
+            {/* variants: Animation configuration (direction: "down", delay: 0.2s) */}
+            {/* initial: Starting state (hidden) */}
+            {/* whileInView: Animation triggers when element enters viewport */}
+            {/* viewport: once: false = re-animate every time it enters view, amount: 0.4 = trigger when 40% visible */}
             <motion.h1
               variants={fadeIn("down", 0.2)}
               initial="hidden"
@@ -54,14 +72,18 @@ const Hero = () => {
               </Button>
             </motion.div>
           </div>
-          {/* image */}
+          {/* Hero Image - Plate */}
+          {/* Hidden on mobile, visible on desktop (xl breakpoint) */}
+          {/* Absolutely positioned on desktop for overlay effect */}
+          {/* Animation: fades in from bottom with 0.8s delay */}
           <motion.div 
             variants={fadeIn("up", 0.8)}
             initial="hidden"
             whileInView={"show"}
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: false, amount: 0.1 }}  
             className="hidden xl:flex xl:absolute xl:top-[200px] xl:right-0"
           >
+            {/* Next.js Image component with explicit dimensions for optimization */}
             <Image
               src="/hero/plate.png"
               width={756}
@@ -72,7 +94,9 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* coffe img */}
+      {/* Coffee Image - Decorative Element */}
+      {/* Positioned with negative top margin to overlap with hero section */}
+      {/* Animation delay of 1.2s creates staggered animation effect */}
       <motion.div 
         variants={fadeIn("up", 1.2)}
         initial="hidden"
