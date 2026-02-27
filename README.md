@@ -1,19 +1,16 @@
-# Restaurant JS Landing Page - Next.js, TailwindCSS, Framer Motion Frontend Project
+# W'Foood | Restaurant Landing Page 1 - Next.js, JavaScript, TailwindCSS, Framer Motion Frontend Project
 
-A modern, responsive restaurant website built with Next.js 14, featuring smooth animations, interactive maps, and a beautiful UI. This project demonstrates best practices for building static websites with React Server Components, TailwindCSS, and modern animation libraries.
-
-- **Live-Demo:** [https://restaurant-js-arnob.vercel.app/](https://restaurant-js-arnob.vercel.app/)
-
-> _Note: This project is implemented in JavaScript. A TypeScript version is also available at [RestaurantTS-NextJS](https://github.com/arnobt78/RestaurantTS-NextJS-Website)._
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3-38bdf8?style=for-the-badge&logo=tailwind-css)
 ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-10.16-0055FF?style=for-the-badge)
 
-![project23](https://github.com/user-attachments/assets/77de8404-aeba-4f67-b5fe-0438e80bda73) ![Screenshot 2024-09-13 at 03 34 24](https://github.com/user-attachments/assets/1ef89f8a-e6f8-4bfa-9c95-453e35bbf4ee) ![Screenshot 2024-09-13 at 03 35 51](https://github.com/user-attachments/assets/9f3eb9e5-5dd7-46fd-9b23-aee505fa84d1) ![Screenshot 2024-09-13 at 03 34 55](https://github.com/user-attachments/assets/bd1df324-3ba9-45d9-a530-5ebce27cfe36) ![Screenshot 2024-09-13 at 03 35 12](https://github.com/user-attachments/assets/d6f0347c-3ec7-41d1-9d64-695ee0ddfd24) ![Screenshot 2024-09-13 at 03 35 33](https://github.com/user-attachments/assets/7bff98ba-b797-4c01-962e-ec0e2156bbd6)
+A modern, responsive restaurant website built with Next.js 14, featuring smooth animations, interactive maps, and a beautiful UI. This project demonstrates best practices for building static websites with React Server Components, TailwindCSS, and modern animation libraries.
 
----
+- **Live-Demo:** [https://restaurant-js-arnob.vercel.app/](https://restaurant-js-arnob.vercel.app/)
+
+![project23](https://github.com/user-attachments/assets/77de8404-aeba-4f67-b5fe-0438e80bda73) ![Screenshot 2024-09-13 at 03 34 24](https://github.com/user-attachments/assets/1ef89f8a-e6f8-4bfa-9c95-453e35bbf4ee) ![Screenshot 2024-09-13 at 03 35 51](https://github.com/user-attachments/assets/9f3eb9e5-5dd7-46fd-9b23-aee505fa84d1) ![Screenshot 2024-09-13 at 03 34 55](https://github.com/user-attachments/assets/bd1df324-3ba9-45d9-a530-5ebce27cfe36) ![Screenshot 2024-09-13 at 03 35 12](https://github.com/user-attachments/assets/d6f0347c-3ec7-41d1-9d64-695ee0ddfd24) ![Screenshot 2024-09-13 at 03 35 33](https://github.com/user-attachments/assets/7bff98ba-b797-4c01-962e-ec0e2156bbd6)
 
 ## 📋 Table of Contents
 
@@ -1504,14 +1501,16 @@ Feel free to:
 
 ---
 
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code as per the terms of the license.
+
 ## Happy Coding! 🎉
 
-Feel free to use this project repository and extend this project further!
+This is an **open-source project** - feel free to use, enhance, and extend this project further!
 
-If you have any questions or want to share your work, reach out via GitHub or my portfolio at [https://arnob-mahmud.vercel.app/](https://arnob-mahmud.vercel.app/).
+If you have any questions or want to share your work, reach out via GitHub or my portfolio at [https://www.arnobmahmud.com](https://www.arnobmahmud.com).
 
 **Enjoy building and learning!** 🚀
 
 Thank you! 😊
-
----
