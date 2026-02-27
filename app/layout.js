@@ -27,7 +27,7 @@ const poppins = Poppins({
 // Next.js automatically converts this into appropriate <meta> tags in the HTML <head>
 export const metadata = {
   // Base URL for all relative URLs in metadata (for Open Graph images, etc.)
-  metadataBase: new URL("https://restaurant-js-arnob.vercel.app"),
+  metadataBase: new URL("https://restaurant-wfood.vercel.app/"),
   // Title configuration with default and template
   // template: Allows dynamic page titles (e.g., "Menu | W'Food Restaurant")
   title: {
@@ -89,7 +89,7 @@ export const metadata = {
   openGraph: {
     type: "website", // Type of content (website, article, video, etc.)
     locale: "en_US", // Language and region
-    url: "https://restaurant-js-arnob.vercel.app",
+    url: "https://restaurant-wfood.vercel.app/",
     siteName: "W'Food Restaurant",
     title: "W'Food - A Taste of Local Flavours | Modern Restaurant Website",
     description:
