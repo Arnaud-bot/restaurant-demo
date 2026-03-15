@@ -1,10 +1,15 @@
 "use client";
 
+/**
+ * Button – Reusable button with CVA variants (default, green, orange, input, ghost) and sizes (default, sm).
+ * asChild: when true, renders as Radix Slot so the single child receives the button styles (e.g. for ScrollLink).
+ */
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
+/** CVA: base classes + variant/size options; used by Button and by Calendar for nav/day styles */
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap text-base font-semibold ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-orange focus-visible:ring-offset-1 disabled:pointer-events-none disabled:opacity-50",
   {

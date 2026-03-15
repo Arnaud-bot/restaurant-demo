@@ -1,3 +1,7 @@
+/**
+ * Mobile nav config: same section paths as navLinks plus ReactNode icons (react-icons).
+ * Used by components/NavMobile.tsx for the overlay menu.
+ */
 import { RiHomeFill } from "react-icons/ri";
 import { BiSolidFoodMenu } from "react-icons/bi";
 import { FaUsers, FaEnvelope } from "react-icons/fa";

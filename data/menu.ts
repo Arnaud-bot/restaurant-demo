@@ -1,3 +1,7 @@
+/**
+ * Menu section data: featured dishes with image path, title, and price.
+ * Consumed by components/Menu.tsx. Types from @/types (MenuItem).
+ */
 import type { MenuItem } from "@/types";
 
 /** Menu items data - in a real app this would come from a CMS or API */

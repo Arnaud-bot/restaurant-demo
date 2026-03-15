@@ -1,1503 +1,308 @@
 # W'Foood | Restaurant Landing Page 1 - Next.js, TypeScript, TailwindCSS, Framer Motion Frontend Project
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=for-the-badge&logo=next.js)
-![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3-38bdf8?style=for-the-badge&logo=tailwind-css)
-![Framer Motion](https://img.shields.io/badge/Framer%20Motion-10.16-0055FF?style=for-the-badge)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18.3.1-blue)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11-0055FF)](https://www.framer.com/motion/)
 
-A modern, responsive restaurant website built with Next.js 14, featuring smooth animations, interactive maps, and a beautiful UI. This project demonstrates best practices for building static websites with React Server Components, TailwindCSS, and modern animation libraries.
+A modern, responsive restaurant website built with Next.js 15, TypeScript, TailwindCSS, and Framer Motion. This project showcases local flavours and cuisine with smooth animations, an interactive map, and a clean UI. It is designed for both production use and as an educational resource for learning the App Router, client components, and modern React patterns. All content is static and client-friendly—no backend or API is required to run it.
 
-- **Live-Demo:** [https://restaurant-wfood.vercel.app/](https://restaurant-wfood.vercel.app/)
+- **Live Demo:** [https://restaurant-wfood.vercel.app/](https://restaurant-wfood.vercel.app/)
 
 ![project23](https://github.com/user-attachments/assets/77de8404-aeba-4f67-b5fe-0438e80bda73) ![Screenshot 2024-09-13 at 03 34 24](https://github.com/user-attachments/assets/1ef89f8a-e6f8-4bfa-9c95-453e35bbf4ee) ![Screenshot 2024-09-13 at 03 35 51](https://github.com/user-attachments/assets/9f3eb9e5-5dd7-46fd-9b23-aee505fa84d1) ![Screenshot 2024-09-13 at 03 34 55](https://github.com/user-attachments/assets/bd1df324-3ba9-45d9-a530-5ebce27cfe36) ![Screenshot 2024-09-13 at 03 35 12](https://github.com/user-attachments/assets/d6f0347c-3ec7-41d1-9d64-695ee0ddfd24) ![Screenshot 2024-09-13 at 03 35 33](https://github.com/user-attachments/assets/7bff98ba-b797-4c01-962e-ec0e2156bbd6)
 
-## 📋 Table of Contents
+---
 
-- [Project Overview](#-project-overview)
-- [Features](#-features)
-- [Technology Stack](#-technology-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Running the Project](#-running-the-project)
-- [Environment Variables](#-environment-variables)
-- [Project Walkthrough](#-project-walkthrough)
-- [Component Documentation](#-component-documentation)
-- [Routes and Navigation](#-routes-and-navigation)
-- [Reusing Components](#️-reusing-components)
-- [Code Examples](#-code-examples)
-- [Customization Guide](#-customization-guide)
-- [Deployment](#-deployment)
-- [Learning Resources](#-learning-resources)
-- [Keywords](#-keywords)
-- [Conclusion](#-conclusion)
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features & Functionality](#features--functionality)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Installation & How to Run](#installation--how-to-run)
+- [Environment Variables](#environment-variables)
+- [Routes & Navigation](#routes--navigation)
+- [Components Walkthrough](#components-walkthrough)
+- [Libraries & Dependencies](#libraries--dependencies)
+- [Reusing Components](#reusing-components)
+- [Deployment](#deployment)
+- [Keywords](#keywords)
+- [Conclusion](#conclusion)
+- [License](#license)
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
-W'Food is a modern restaurant website showcasing local flavors and cuisine. Built as a static site using Next.js 14 App Router, it features:
-
-- **Responsive Design**: Mobile-first approach with breakpoints for all screen sizes
-- **Smooth Animations**: Framer Motion animations for engaging user experience
-- **Interactive Maps**: React-Leaflet integration for location display
-- **Modern UI Components**: Radix UI components for accessible form elements
-- **SEO Optimized**: Comprehensive metadata and Open Graph tags
-- **Performance Optimized**: Image optimization, font optimization, and code splitting
-
-This project serves as both a production-ready website and an educational resource for learning modern React/Next.js development patterns.
+**W'Food** is a single-page restaurant landing site that presents a hero section, menu items, a reservation form, an about section, an interactive map, and a footer. It is built with the **Next.js 15 App Router**, **TypeScript**, **TailwindCSS**, and **Framer Motion**. The app is fully static and frontend-only: there is no backend server, database, or API. All data (menu items, nav links, map markers) lives in the codebase under `data/` and `types/`. The project is suitable for learning Next.js App Router, client components, animations, and responsive layout patterns.
 
 ---
 
-## ✨ Features
+## Features & Functionality
 
-### Core Features
+**Core features:**
 
-- **Hero Section**: Eye-catching introduction with animated text and images
-- **Menu Display**: Showcase featured dishes with hover effects and responsive grid
-- **Reservation System**: Interactive form with date picker and party size selector
-- **About Section**: Two-column layout with restaurant information
-- **Interactive Map**: Multiple location markers with popups
-- **Responsive Navigation**: Desktop and mobile navigation with smooth scrolling
-- **Footer**: Links, social media, and copyright information
+- **Hero section** – Full-width hero with headline, subtitle, and imagery. Uses Framer Motion for fade-in animations keyed to scroll.
+- **Menu section** – Grid of featured dishes (image, title, price). Data comes from `data/menu.ts`. Hover effects and responsive columns.
+- **Reservation section** – Form with first/last name, date picker (react-day-picker), and party size select (Radix Select). UI-only; no submission backend.
+- **About section** – Two-column layout (text + image) with scroll-triggered animations.
+- **Map section** – Interactive Leaflet map (via react-leaflet) with multiple markers and popups. Loaded only on the client via `MapDynamic` to avoid SSR issues with Leaflet.
+- **Header** – Fixed nav with logo, desktop nav links (smooth scroll via react-scroll), “Book a table” CTA, and mobile menu.
+- **Footer** – Logo, link columns (Blog, New Item, Socials), and copyright.
 
-### Technical Features
+**Technical behaviour:**
 
-- **Server-Side Rendering (SSR)**: Fast initial page loads
-- **Static Site Generation (SSG)**: Pre-rendered pages for optimal performance
-- **Dynamic Imports**: Code splitting for better performance
-- **Font Optimization**: Self-hosted Google Fonts via Next.js
-- **Image Optimization**: Automatic image optimization with Next.js Image component
-- **Accessibility**: ARIA labels, keyboard navigation, and semantic HTML
-- **SEO**: Comprehensive metadata, Open Graph, and Twitter Card tags
+- **Single route** – The only route is `/` (home). All sections are on one page; navigation uses scroll-to-section (e.g. `#home`, `#menu`, `#about`, `#contact`, `#reservation`).
+- **Client components** – Interactive pieces use `"use client"` (Header, Hero, Menu, About, Footer, Map, Nav, NavMobile, Reservation, ReservationForm, UI primitives).
+- **Dynamic import** – The map is wrapped in `MapDynamic`, which uses `next/dynamic` with `ssr: false` so Leaflet runs only in the browser.
+- **SEO** – Metadata (title, description, keywords, Open Graph, Twitter, icons, author) is set in `app/layout.tsx` for better search and sharing.
 
 ---
 
-## 🛠 Technology Stack
+## Technology Stack
 
-### Core Framework
-
-- **Next.js 14.2.35**: React framework with App Router, SSR, and SSG
-- **React 18**: UI library with hooks and modern patterns
-- **JavaScript (ES6+)**: Modern JavaScript features
-
-### Styling
-
-- **TailwindCSS 3.3**: Utility-first CSS framework
-- **tailwindcss-animate**: Animation utilities for Tailwind
-- **Custom CSS Variables**: Font and color management
-
-### Animation & Interaction
-
-- **Framer Motion 10.16**: Production-ready animation library
-- **react-scroll**: Smooth scrolling navigation
-- **react-responsive**: Media query hooks
-
-### UI Components
-
-- **Radix UI**: Accessible component primitives
-  - `@radix-ui/react-popover`: Popover component
-  - `@radix-ui/react-select`: Select dropdown
-  - `@radix-ui/react-label`: Form labels
-  - `@radix-ui/react-slot`: Polymorphic components
-- **Lucide React**: Modern icon library
-- **React Icons**: Comprehensive icon collection
-
-### Maps & Location
-
-- **React-Leaflet 4.2**: React wrapper for Leaflet maps
-- **Leaflet 1.9**: Interactive maps library
-
-### Date Handling
-
-- **date-fns 2.30**: Date utility library
-- **react-day-picker 8.9**: Date picker component
-
-### Utilities
-
-- **class-variance-authority**: Type-safe variant system
-- **clsx**: Conditional class names
-- **tailwind-merge**: Merge Tailwind classes intelligently
-
-### Development Tools
-
-- **ESLint**: Code linting
-- **PostCSS**: CSS processing
-- **Autoprefixer**: CSS vendor prefixing
+| Layer         | Technology                                                                               |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| Framework     | Next.js 15 (App Router)                                                                  |
+| Language      | TypeScript 5.6                                                                           |
+| UI            | React 18.3                                                                               |
+| Styling       | TailwindCSS 3.4, tailwindcss-animate                                                     |
+| Fonts         | Next.js Google Fonts (Lora, Poppins)                                                     |
+| Animation     | Framer Motion 11                                                                         |
+| Maps          | Leaflet, react-leaflet                                                                   |
+| UI primitives | Radix UI (Label, Popover, Select, Slot)                                                  |
+| Icons         | Lucide React, React Icons                                                                |
+| Utilities     | clsx, tailwind-merge, class-variance-authority, date-fns, react-scroll, react-responsive |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```bash
-restaurant-js/
-├── app/                          # Next.js App Router directory
-│   ├── layout.js                 # Root layout with metadata and fonts
-│   ├── page.js                   # Homepage component
-│   ├── globals.css               # Global styles and Tailwind directives
-│   └── favicon.ico               # Site favicon
-├── components/                   # React components
-│   ├── About.jsx                 # About section component
-│   ├── Footer.jsx                # Footer component
-│   ├── Header.jsx                # Header with navigation
-│   ├── Hero.jsx                  # Hero section component
-│   ├── Map.jsx                   # Interactive map component
-│   ├── Menu.jsx                  # Menu display component
-│   ├── Nav.jsx                   # Desktop navigation
-│   ├── NavMobile.jsx             # Mobile navigation
-│   ├── Reservation.jsx           # Reservation section wrapper
-│   ├── ReservationForm.jsx       # Reservation form component
-│   ├── StyleGuide.jsx            # Style guide component
-│   └── ui/                       # Reusable UI components
-│       ├── button.jsx            # Button component with variants
-│       ├── calendar.jsx          # Calendar component
-│       ├── input.jsx             # Input component
-│       ├── label.jsx             # Label component
-│       ├── popover.jsx            # Popover component
-│       └── select.jsx             # Select dropdown component
-├── lib/                          # Utility functions
-│   └── utils.js                  # Class name merging utility
-├── public/                       # Static assets
-│   ├── about/                    # About section images
-│   ├── footer/                   # Footer background
-│   ├── hero/                     # Hero section images
-│   ├── map/                      # Map marker images
-│   ├── menu/                     # Menu item images
-│   ├── reservation/             # Reservation background
-│   ├── logo.svg                  # Site logo
-│   └── pin-solid.svg             # Map pin icon
-├── variants.js                   # Framer Motion animation variants
-├── components.json               # shadcn/ui configuration
-├── jsconfig.json                 # JavaScript path aliases
-├── next.config.js                # Next.js configuration
-├── tailwind.config.js            # TailwindCSS configuration
-├── postcss.config.js             # PostCSS configuration
-├── package.json                  # Dependencies and scripts
-└── README.md                     # Project documentation
+restaurant-1/
+├── app/
+│   ├── layout.tsx      # Root layout, fonts, metadata, global styles
+│   ├── page.tsx        # Home page: composes all sections
+│   ├── globals.css     # Tailwind directives + base styles
+│   └── favicon.ico     # Site favicon
+├── components/
+│   ├── Header.tsx      # Fixed header, logo, nav, CTA, mobile menu
+│   ├── Hero.tsx        # Hero section with motion animations
+│   ├── Menu.tsx        # Menu grid (data from data/menu.ts)
+│   ├── Reservation.tsx # Reservation section wrapper
+│   ├── ReservationForm.tsx # Form: name, date picker, party size
+│   ├── About.tsx       # About section (text + image)
+│   ├── Map.tsx         # Leaflet map with markers (client-only)
+│   ├── MapDynamic.tsx  # Dynamic wrapper for Map (ssr: false)
+│   ├── Footer.tsx      # Footer with links and copyright
+│   ├── Nav.tsx         # Desktop nav (react-scroll links)
+│   ├── NavMobile.tsx   # Mobile menu with icons
+│   ├── StyleGuide.tsx  # Style guide / UI showcase
+│   └── ui/             # Reusable UI primitives
+│       ├── button.tsx
+│       ├── input.tsx
+│       ├── label.tsx
+│       ├── select.tsx
+│       ├── popover.tsx
+│       └── calendar.tsx
+├── data/
+│   ├── menu.ts         # Menu items (img, title, price)
+│   ├── navLinks.ts     # Desktop nav (path, name, offset)
+│   ├── navMobileLinks.tsx # Mobile nav with icons
+│   └── mapMarkers.ts   # Map marker data (position, title, subtitle, image)
+├── lib/
+│   ├── utils.ts        # cn() – merge Tailwind classes
+│   └── variants.ts    # Framer Motion fadeIn variants
+├── types/
+│   ├── index.ts        # MenuItem, NavLinkConfig, MapMarkerData, etc.
+│   └── react-scroll.d.ts # Type declaration for react-scroll
+├── public/             # Static assets (images, icons)
+├── next.config.mjs
+├── tailwind.config.js
+├── tsconfig.json
+├── vercel.json         # Rewrites for SPA-style routing on Vercel
+└── package.json
 ```
 
 ---
 
-## 🚀 Installation
+## Installation & How to Run
 
-### Prerequisites
+**Prerequisites:** Node.js 18+ and npm (or yarn/pnpm).
 
-Before you begin, ensure you have the following installed:
+**Steps:**
 
-- **Node.js** 18.x or higher ([Download](https://nodejs.org/))
-- **npm** 9.x or higher (comes with Node.js)
-- **Git** (for cloning the repository)
-
-### Step 1: Clone the Repository
-
-```bash
-git clone https://github.com/arnobt78/RestaurantJS--TailwindCSS-Fundamental-Project-5.git
-cd RestaurantJS--TailwindCSS-Fundamental-Project-5
-```
-
----
-
-### Step 2: Install Dependencies
-
-Using npm:
-
-```bash
-npm install
-```
-
-Or using yarn:
-
-```bash
-yarn install
-```
-
-Or using pnpm:
-
-```bash
-pnpm install
-```
-
-Or using bun:
-
-```bash
-bun install
-```
-
----
-
-### Step 3: Verify Installation
-
-Check that all dependencies are installed correctly:
-
-```bash
-npm list --depth=0
-```
-
----
-
-## 🏃 Running the Project
-
-### Development Mode
-
-Start the development server with hot reloading:
-
-```bash
-npm run dev
-```
-
-The application will be available at [http://localhost:3000](http://localhost:3000)
-
-**Features in Development Mode:**
-
-- Hot Module Replacement (HMR)
-- Fast Refresh for React components
-- Error overlay in the browser
-- Source maps for debugging
-
----
-
-### Production Build
-
-Create an optimized production build:
-
-```bash
-npm run build
-```
-
-This command:
-
-- Compiles and optimizes all code
-- Generates static pages
-- Minifies JavaScript and CSS
-- Optimizes images
-- Creates production-ready files in `.next` directory
-
----
-
-### Production Server
-
-After building, start the production server:
-
-```bash
-npm start
-```
-
-The production server will be available at [http://localhost:3000](http://localhost:3000)
-
----
-
-### Linting
-
-Check code quality and style:
-
-```bash
-npm run lint
-```
-
----
-
-## 🔐 Environment Variables
-
-### Why No .env File?
-
-This project is a **static website** that doesn't require:
-
-- API keys
-- Database connections
-- Server-side environment variables
-- Third-party service credentials
-
-All data is static and embedded in components. The map uses public tile layers that don't require authentication.
-
-### When You Might Need .env
-
-If you extend this project with:
-
-1. **Backend API Integration**
-
-   ```env
-   NEXT_PUBLIC_API_URL=https://api.example.com
-   NEXT_PUBLIC_API_KEY=your-api-key
-   ```
-
-2. **Analytics Services**
-
-   ```env
-   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-   NEXT_PUBLIC_HOTJAR_ID=your-hotjar-id
-   ```
-
-3. **Map Service API Keys**
-
-   ```env
-   NEXT_PUBLIC_MAPBOX_TOKEN=your-mapbox-token
-   NEXT_PUBLIC_GOOGLE_MAPS_KEY=your-google-maps-key
-   ```
-
-4. **Content Management System**
-
-   ```env
-   NEXT_PUBLIC_CMS_URL=https://cms.example.com
-   NEXT_PUBLIC_CMS_TOKEN=your-cms-token
-   ```
-
-### Creating .env.local
-
-If you need environment variables:
-
-1. Create `.env.local` in the root directory:
+1. Clone the repository and go into the project folder:
 
    ```bash
-   touch .env.local
+   git clone <repository-url>
+   cd restaurant-1
    ```
 
-2. Add your variables:
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+4. Other scripts:
+   - **Build:** `npm run build` – production build.
+   - **Start:** `npm run start` – run the production build locally.
+   - **Lint:** `npm run lint` – run ESLint (Next.js config).
+
+You do **not** need a backend or any external service to run or build this project.
+
+---
+
+## Environment Variables
+
+**You do not need any environment variables to run this project.** It works out of the box with no `.env` file.
+
+If you later add features that need configuration (e.g. analytics, a contact form backend, or a CMS), you can:
+
+1. Create a `.env.local` in the project root (this file is gitignored).
+2. Add variables such as:
 
    ```env
-   # Example environment variables
-   NEXT_PUBLIC_API_URL=http://localhost:3000/api
-   NEXT_PUBLIC_SITE_URL=http://localhost:3000
+   NEXT_PUBLIC_SITE_URL=https://restaurant-wfood.vercel.app
+   # Optional examples:
+   # NEXT_PUBLIC_ANALYTICS_ID=...
+   # CONTACT_FORM_ENDPOINT=...
    ```
 
-3. Access in code:
+3. Use them in code via `process.env.NEXT_PUBLIC_*` (client) or `process.env.*` (server). Restart the dev server after changing `.env.local`.
 
-   ```javascript
-   // In any component or page
-   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-   ```
-
-**Important Notes:**
-
-- Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser
-- Variables without prefix are server-only
-- Never commit `.env.local` to version control
-- Add `.env.local` to `.gitignore`
+For the current codebase, no env vars are read; this section is for future use only.
 
 ---
 
-## 🎓 Project Walkthrough
+## Routes & Navigation
 
-### Understanding the Architecture
+- **Route:** There is a single route, `/`, defined by `app/page.tsx`. It renders the main layout with all sections (Header, Hero, Menu, Reservation, About, Map, Footer).
 
-This project uses **Next.js 14 App Router**, which provides:
+- **In-page navigation:** Links in the header and mobile menu use **react-scroll** to smooth-scroll to section IDs: `#home`, `#menu`, `#about`, `#contact`, `#reservation`. Section IDs are set on the corresponding `<section>` elements (e.g. `id="home"`, `id="menu"`).
 
-1. **File-based Routing**: Files in `app/` directory become routes
-2. **Server Components**: Default components are server-rendered
-3. **Client Components**: Marked with `"use client"` for interactivity
-4. **Layouts**: Shared UI across routes
-5. **Metadata API**: SEO and social sharing configuration
+- **Vercel rewrites:** `vercel.json` rewrites all non-asset paths to `/` so that refreshing the page on any path still serves the app (SPA-style behaviour on Vercel).
+
+There are no API routes or server-only routes in this project.
 
 ---
 
-### Page Flow
+## Components Walkthrough
 
-```text
-User visits / (homepage)
-    ↓
-app/page.js renders
-    ↓
-Components load in order:
-    1. Header (fixed navigation)
-    2. Hero (main banner)
-    3. Menu (featured dishes)
-    4. Reservation (booking form)
-    5. About (restaurant info)
-    6. Map (location)
-    7. Footer (links and copyright)
-```
+**app/layout.tsx**  
+Root layout: loads Lora and Poppins via `next/font/google`, applies `globals.css`, and exports `metadata` (title, description, keywords, Open Graph, Twitter, icons, author, etc.). Renders `<html>` and `<body>` with font variables and background styles.
 
----
+**app/page.tsx**  
+Server component that composes the single page: Header, Hero, Menu, Reservation, About, MapDynamic, Footer inside a `<main>` container.
 
-### Component Hierarchy
+**Header**  
+Client component. Tracks scroll position; toggles header background after 100px. Renders logo (Next.js `Link` + `Image`), desktop `Nav`, a react-scroll “Book a table” button, and `NavMobile` for small screens.
 
-```text
-RootLayout (app/layout.js)
-    └── Home (app/page.js)
-        ├── Header
-        │   ├── Nav (desktop)
-        │   └── NavMobile (mobile)
-        ├── Hero
-        ├── Menu
-        ├── Reservation
-        │   └── ReservationForm
-        │       ├── Input (ui)
-        │       ├── Calendar (ui)
-        │       └── Select (ui)
-        ├── About
-        ├── Map
-        └── Footer
-```
+**Nav**  
+Uses `Link` from react-scroll to scroll to section IDs. Link list and offsets come from `data/navLinks.ts`.
 
----
+**NavMobile**  
+Mobile menu: hamburger icon toggles a full-screen overlay with logo, scroll links (with icons from `data/navMobileLinks.tsx`), and “Book a table” button.
 
-## 📚 Component Documentation
+**Hero**  
+Hero block with headline, byline, and CTA. Uses Framer Motion’s `motion.*` and `fadeIn` from `lib/variants.ts` for scroll-triggered animations. Images via Next.js `Image`.
 
-### Layout Components
+**Menu**  
+Reads `menuItems` from `data/menu.ts` and renders a responsive grid. Each item shows image, title, and price with hover effects.
 
-#### `app/layout.js`
+**Reservation & ReservationForm**  
+Reservation is a wrapper with motion; the form inside uses Radix Popover + react-day-picker for the date and Radix Select for party size. No submit handler; form is UI-only.
 
-Root layout component that wraps all pages.
+**About**  
+Two-column layout (text + image) with motion variants.
 
-**Features:**
+**Map & MapDynamic**  
+`Map` uses react-leaflet (MapContainer, TileLayer, Marker, Popup) and `mapMarkers` from `data/mapMarkers.ts`. It is only loaded on the client; `MapDynamic` uses `dynamic(() => import('@/components/Map'), { ssr: false })` so the map does not run during SSR.
 
-- Font optimization (Lora, Poppins)
-- SEO metadata configuration
-- Open Graph and Twitter Card tags
-- Global styles application
+**Footer**  
+Footer with logo, link groups, and copyright. All links currently point to `/`.
 
-**Key Code:**
-
-```javascript
-export const metadata = {
-  title: {
-    default: "W'Food - A Taste of Local Flavours",
-    template: "%s | W'Food Restaurant",
-  },
-  description: "Experience authentic local flavours...",
-  // ... more metadata
-};
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={`${lora.variable} ${poppins.variable}`}>{children}</body>
-    </html>
-  );
-}
-```
+**components/ui/**  
+Reusable primitives built on Radix (button, input, label, select, popover) and react-day-picker (calendar). Styled with Tailwind and the `cn()` helper from `lib/utils.ts`.
 
 ---
 
-#### `app/page.js`
+## Libraries & Dependencies
 
-Homepage component that composes all sections.
+**Next.js 15** – React framework with App Router, file-based routing, and built-in optimizations (images, fonts, code splitting). This project uses the `app/` directory and a single `page.tsx`.
 
-**Features:**
+**React 18 & TypeScript** – UI library and typed JavaScript. Components are written in `.tsx` with explicit types (see `types/index.ts`).
 
-- Dynamic imports for performance
-- Component composition
-- Static page generation
+**TailwindCSS** – Utility-first CSS. Classes are used in JSX; theme (colors, fonts, breakpoints) is in `tailwind.config.js`. The `cn()` helper in `lib/utils.ts` combines `clsx` and `tailwind-merge` to merge and resolve class names safely.
 
-**Key Code:**
+**Framer Motion** – Declarative animations. `lib/variants.ts` exports a `fadeIn(direction, delay)` helper that returns `hidden`/`show` variants for use with `motion.*` and `initial`/`whileInView`.
 
-```javascript
-// Dynamic import prevents SSR issues with Leaflet
-const MyMap = dynamic(() => import("../components/Map"), { ssr: false });
+**react-scroll** – Enables smooth scrolling to in-page sections. `<Link to="reservation" smooth offset={-150}>` scrolls to the element with `id="reservation"` with an offset.
 
-export default function Home() {
-  return (
-    <main className="w-full max-w-[1440px] bg-white mx-auto overflow-hidden">
-      <Header />
-      <Hero />
-      <Menu />
-      <Reservation />
-      <About />
-      <MyMap />
-      <Footer />
-    </main>
-  );
-}
-```
+**Radix UI** – Accessible primitives (Label, Popover, Select, Slot). Used in ReservationForm and in `components/ui/` for consistent, accessible form and overlay behaviour.
+
+**Leaflet & react-leaflet** – Map library and React bindings. The map is rendered only on the client to avoid “window is not defined” during SSR.
+
+**date-fns & react-day-picker** – Date formatting and calendar UI for the reservation date field.
+
+**class-variance-authority (cva)** – Used in `components/ui/button.tsx` to define button variants (default, orange, input, ghost) and sizes in a type-safe way.
 
 ---
 
-### Navigation Components
+## Reusing Components
 
-#### `components/Header.jsx`
+You can copy individual components or the whole structure into another Next.js (App Router) project.
 
-Fixed header with scroll detection and responsive navigation.
+**Example – reuse Hero and Menu:**
 
-**Features:**
+1. Copy `components/Hero.tsx` and `components/Menu.tsx`.
+2. Copy `lib/variants.ts` and `lib/utils.ts` (Hero/Menu and UI depend on them).
+3. Copy `data/menu.ts` (Menu reads `menuItems`).
+4. Ensure `types/index.ts` (or equivalent) defines `MenuItem` and `FadeDirection` (or adapt imports).
+5. Ensure Tailwind is set up and `tailwind.config.js` includes your `content` paths and any custom theme (e.g. `colors.body`, `fontFamily`) used by these components.
+6. In your page or layout, render `<Hero />` and `<Menu />`. If you use Next.js `Image`, keep assets in `public/` and paths like `/hero/plate.png`, `/menu/item-1.png` as in this project, or update them to your asset paths.
 
-- Scroll-based background change
-- Desktop and mobile navigation
-- Smooth scroll to sections
-- Event listener cleanup
+**Example – reuse only the Button:**
 
-**Key Code:**
+Copy `components/ui/button.tsx` and `lib/utils.ts`. Install `class-variance-authority`, `clsx`, and `tailwind-merge`. Use `<Button variant="orange" size="sm">Book a table</Button>` (or any variant/size). Adjust Tailwind theme if your project uses different colour names.
 
-```javascript
-const [active, setActive] = useState(false);
-
-useEffect(() => {
-  const handleScroll = () => {
-    setActive(window.scrollY > 100);
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-```
-
-**Props:** None (self-contained)
-
-**Usage:**
-
-```jsx
-<Header />
-```
+**General tip:** This app uses the `@/` path alias (e.g. `@/components/Header`, `@/lib/utils`). In a new project, configure the same in `tsconfig.json` (`"paths": { "@/*": ["./*"] }`) or change imports to relative paths when reusing files.
 
 ---
 
-#### `components/Nav.jsx`
+## Deployment
 
-Desktop navigation component with smooth scrolling.
+**Vercel (recommended):**
 
-**Features:**
+1. Push the repo to GitHub (or connect your Git provider in Vercel).
+2. In Vercel, create a new project and import the repository.
+3. Leave build command as `npm run build` and output as default (Next.js).
+4. Deploy. The live URL will be something like `https://<project>.vercel.app`. The project is already configured with `vercel.json` for SPA-style rewrites.
 
-- Smooth scroll to sections
-- Active link highlighting
-- Configurable styles via props
-
-**Props:**
-
-- `containerStyles`: CSS classes for nav container
-- `linkStyles`: CSS classes for links
-
-**Usage:**
-
-```jsx
-<Nav
-  containerStyles="hidden xl:flex gap-x-12 text-white"
-  linkStyles="capitalize"
-/>
-```
+**Other platforms:** Use `npm run build` and `npm run start`, or follow your host’s guide for Next.js. Ensure Node.js 18+ is available. No environment variables are required for the current feature set.
 
 ---
 
-#### `components/NavMobile.jsx`
+## Keywords
 
-Mobile hamburger menu with slide-in animation.
-
-**Features:**
-
-- Toggleable sidebar menu
-- Icon-based navigation
-- Smooth animations
-- Click outside to close
-
-**Props:**
-
-- `containerStyles`: CSS classes for container
-- `iconStyles`: CSS classes for icons
-- `linkStyles`: CSS classes for links
-
-**Usage:**
-
-```jsx
-<NavMobile
-  containerStyles="xl:hidden"
-  iconStyles="text-3xl"
-  linkStyles="uppercase"
-/>
-```
+restaurant, local food, dining, W'Food, restaurant website, food menu, book table, restaurant reservation, local flavours, modern restaurant, fine dining, gourmet food, restaurant menu, online reservation, restaurant booking, Next.js, React, TypeScript, TailwindCSS, Framer Motion, Leaflet, Radix UI, App Router, static site, frontend, learning project, open source.
 
 ---
 
-### Content Components
+## Conclusion
 
-#### `components/Hero.jsx`
-
-Hero section with animated text and images.
-
-**Features:**
-
-- Framer Motion animations
-- Responsive image display
-- Call-to-action button
-- Staggered animations
-
-**Key Code:**
-
-```javascript
-<motion.h1
-  variants={fadeIn("down", 0.2)}
-  initial="hidden"
-  whileInView={"show"}
-  viewport={{ once: false, amount: 0.4 }}
->
-  A taste of local flavours
-</motion.h1>
-```
-
-**Usage:**
-
-```jsx
-<Hero />
-```
-
----
-
-#### `components/Menu.jsx`
-
-Menu items display with hover effects.
-
-**Features:**
-
-- Responsive grid layout
-- Image hover animations
-- Price display
-- Link to full menu
-
-**Data Structure:**
-
-```javascript
-const menu = [
-  {
-    img: "/menu/item-1.png",
-    title: "Stilton and pancetta penne",
-    price: "$24.00",
-  },
-  // ... more items
-];
-```
-
-**Usage:**
-
-```jsx
-<Menu />
-```
-
-**Customization:**
-
-Replace the `menu` array with your own data:
-
-```javascript
-const menu = [
-  {
-    img: "/menu/your-item.png",
-    title: "Your Dish Name",
-    price: "$XX.XX",
-  },
-];
-```
-
----
-
-#### `components/About.jsx`
-
-About section with two-column layout.
-
-**Features:**
-
-- Text and image layout
-- Framer Motion animations
-- Responsive design
-- Read more button
-
-**Usage:**
-
-```jsx
-<About />
-```
-
----
-
-#### `components/Reservation.jsx` & `components/ReservationForm.jsx`
-
-Reservation section with interactive form.
-
-**Features:**
-
-- Date picker (react-day-picker)
-- Party size selector
-- Form inputs
-- Background image
-
-**Form Fields:**
-
-- First name
-- Last name
-- Date selection
-- Number of people
-
-**Usage:**
-
-```jsx
-<Reservation />
-```
-
-**Note:** Currently UI-only. To add functionality:
-
-```javascript
-const handleSubmit = (e) => {
-  e.preventDefault();
-  // Add your form submission logic
-  // e.g., API call, email service, etc.
-};
-```
-
----
-
-#### `components/Map.jsx`
-
-Interactive map with multiple markers.
-
-**Features:**
-
-- React-Leaflet integration
-- Custom marker icons
-- Popup information
-- Responsive zoom levels
-
-**Configuration:**
-
-```javascript
-const markers = [
-  {
-    position: [34.052235, -118.243683], // [lat, lng]
-    title: "Location 1",
-    subtitle: "Description",
-    image: "/map/1.png",
-  },
-];
-```
-
-**Usage:**
-
-```jsx
-<Map />
-```
-
-**Customization:**
-
-Update `markers` array with your locations:
-
-```javascript
-const markers = [
-  {
-    position: [YOUR_LATITUDE, YOUR_LONGITUDE],
-    title: "Your Location",
-    subtitle: "Your description",
-    image: "/map/your-image.png",
-  },
-];
-```
-
----
-
-#### `components/Footer.jsx`
-
-Footer with links and social media.
-
-**Features:**
-
-- Three-column layout
-- Blog links
-- New items section
-- Social media links
-- Copyright information
-
-**Usage:**
-
-```jsx
-<Footer />
-```
-
----
-
-### Reusable UI Components
-
-#### `components/ui/button.jsx`
-
-Reusable button component with variants.
-
-**Variants:**
-
-- `default`: Green primary button
-- `orange`: Orange accent button
-- `input`: Transparent input-style button
-
-**Sizes:**
-
-- `default`: 170px × 62px
-- `sm`: 150px × 58px
-
-**Usage:**
-
-```jsx
-<Button variant="orange" size="sm">
-  Click me
-</Button>
-```
-
-**With asChild (polymorphic):**
-
-```jsx
-<Button asChild variant="default">
-  <Link href="/menu">View Menu</Link>
-</Button>
-```
-
----
-
-#### `components/ui/input.jsx`
-
-Styled input component.
-
-**Usage:**
-
-```jsx
-<Input id="email" type="email" placeholder="Enter email" />
-```
-
----
-
-#### `components/ui/select.jsx`
-
-Accessible select dropdown.
-
-**Usage:**
-
-```jsx
-<Select>
-  <SelectTrigger>
-    <SelectValue placeholder="Select option" />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="option1">Option 1</SelectItem>
-    <SelectItem value="option2">Option 2</SelectItem>
-  </SelectContent>
-</Select>
-```
-
----
-
-#### `components/ui/calendar.jsx`
-
-Date picker calendar component.
-
-**Usage:**
-
-```jsx
-<Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
-```
-
----
-
-### Utility Files
-
-#### `variants.js`
-
-Framer Motion animation variants.
-
-**Function:**
-
-```javascript
-export const fadeIn = (direction, delay) => {
-  return {
-    hidden: {
-      y: direction === "up" ? 80 : direction === "down" ? -80 : 0,
-      opacity: 0,
-      // ... more config
-    },
-    show: {
-      y: 0,
-      x: 0,
-      opacity: 1,
-      // ... more config
-    },
-  };
-};
-```
-
-**Usage:**
-
-```javascript
-import { fadeIn } from "@/variants";
-
-<motion.div variants={fadeIn("up", 0.2)}>Content</motion.div>;
-```
-
----
-
-#### `lib/utils.js`
-
-Class name merging utility.
-
-**Function:**
-
-```javascript
-export function cn(...inputs) {
-  return twMerge(clsx(inputs));
-}
-```
-
-**Usage:**
-
-```javascript
-import { cn } from "@/lib/utils";
-
-<div className={cn("base-class", condition && "conditional-class")} />;
-```
-
----
-
-## 🛣 Routes and Navigation
-
-### File-Based Routing
-
-Next.js App Router uses file-based routing:
-
-```text
-app/
-  ├── page.js          → / (homepage)
-  ├── about/
-  │   └── page.js      → /about
-  ├── menu/
-  │   └── page.js      → /menu
-  └── contact/
-      └── page.js      → /contact
-```
-
-### Current Routes
-
-This project currently has one route:
-
-- **`/`** (Homepage) - `app/page.js`
-
-### Adding New Routes
-
-1. Create a new directory in `app/`:
-
-```bash
-mkdir app/about
-```
-
-1. Create `page.js`:
-
-```javascript
-export default function AboutPage() {
-  return <div>About Page</div>;
-}
-```
-
-1. Add navigation link in `components/Nav.jsx`:
-
-```javascript
-const links = [
-  // ... existing links
-  {
-    path: "about",
-    name: "about",
-    offset: -50,
-  },
-];
-```
-
-### Smooth Scrolling Navigation
-
-The project uses `react-scroll` for smooth section navigation:
-
-```javascript
-import { Link as ScrollLink } from "react-scroll";
-
-<ScrollLink to="menu" smooth={true} offset={-50}>
-  Menu
-</ScrollLink>;
-```
-
-**Parameters:**
-
-- `to`: Section ID to scroll to
-- `smooth`: Enable smooth scrolling
-- `offset`: Pixel offset from top
-
----
-
-## ♻️ Reusing Components
-
-### Using Components in Other Projects
-
-All components are self-contained and can be easily reused.
-
-#### Step 1: Copy Component File
-
-Copy the component file to your project:
-
-```bash
-cp components/Hero.jsx /path/to/your/project/components/
-```
-
-#### Step 2: Copy Dependencies
-
-Ensure required dependencies are installed:
-
-```bash
-npm install framer-motion next/image
-```
-
-#### Step 3: Copy Utilities
-
-Copy utility files if needed:
-
-```bash
-cp variants.js /path/to/your/project/
-cp lib/utils.js /path/to/your/project/lib/
-```
-
-#### Step 4: Update Imports
-
-Update import paths to match your project structure:
-
-```javascript
-// Before
-import { fadeIn } from "@/variants";
-
-// After (if using different alias)
-import { fadeIn } from "../variants";
-```
-
-#### Step 5: Update Styles
-
-Ensure Tailwind classes match your configuration, or update them:
-
-```javascript
-// Update Tailwind classes to match your theme
-className = "bg-hero"; // Make sure 'hero' is defined in tailwind.config.js
-```
-
-### Component Customization
-
-#### Customizing the Hero Component
-
-```javascript
-// Change text content
-<motion.h1>
-  Your Custom Heading
-</motion.h1>
-
-// Change images
-<Image
-  src="/your-hero-image.png"
-  width={756}
-  height={682}
-  alt="your alt text"
-/>
-
-// Change animation
-variants={fadeIn("left", 0.5)} // Different direction and delay
-```
-
-#### Customizing the Menu Component
-
-```javascript
-// Replace menu data
-const menu = [
-  {
-    img: "/your-menu/item-1.png",
-    title: "Your Dish",
-    price: "$XX.XX",
-  },
-];
-
-// Change grid columns
-className = "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3";
-```
-
-#### Customizing the Map Component
-
-```javascript
-// Update map center
-center={[YOUR_LAT, YOUR_LNG]}
-
-// Update markers
-const markers = [
-  {
-    position: [YOUR_LAT, YOUR_LNG],
-    title: "Your Location",
-    subtitle: "Your description",
-    image: "/map/your-image.png"
-  },
-];
-
-// Change map style
-url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-```
-
----
-
-## 💻 Code Examples
-
-### Creating a New Animated Section
-
-```javascript
-"use client";
-
-import { fadeIn } from "@/variants";
-import { motion } from "framer-motion";
-
-export default function NewSection() {
-  return (
-    <motion.section
-      variants={fadeIn("up", 0.2)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.2 }}
-      className="py-20"
-    >
-      <div className="container mx-auto">
-        <motion.h2
-          variants={fadeIn("down", 0.3)}
-          initial="hidden"
-          whileInView={"show"}
-        >
-          Your Section Title
-        </motion.h2>
-      </div>
-    </motion.section>
-  );
-}
-```
-
-### Creating a Custom Button Variant
-
-```javascript
-// In tailwind.config.js
-buttonVariants: {
-  // ... existing variants
-  outline: "border-2 border-green text-green hover:bg-green hover:text-white",
-}
-
-// Usage
-<Button variant="outline">Click me</Button>
-```
-
-### Adding Form Validation
-
-```javascript
-import { useState } from "react";
-
-const ReservationForm = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    date: null,
-    people: "",
-  });
-
-  const [errors, setErrors] = useState({});
-
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.firstName) newErrors.firstName = "Required";
-    if (!formData.lastName) newErrors.lastName = "Required";
-    if (!formData.date) newErrors.date = "Please select a date";
-    if (!formData.people) newErrors.people = "Please select party size";
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      // Submit form
-      console.log("Form submitted:", formData);
-    }
-  };
-
-  return <form onSubmit={handleSubmit}>{/* Form fields */}</form>;
-};
-```
-
-### Adding API Integration
-
-```javascript
-// app/api/reservation/route.js
-export async function POST(request) {
-  const data = await request.json();
-
-  // Process reservation
-  // Save to database, send email, etc.
-
-  return Response.json({ success: true });
-}
-
-// In component
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const response = await fetch("/api/reservation", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formData),
-  });
-  const result = await response.json();
-  // Handle result
-};
-```
-
----
-
-## 🎨 Customization Guide
-
-### Changing Colors
-
-Edit `tailwind.config.js`:
-
-```javascript
-colors: {
-  green: { DEFAULT: '#YOUR_COLOR', hover: '#YOUR_HOVER_COLOR' },
-  orange: { DEFAULT: '#YOUR_COLOR', hover: '#YOUR_HOVER_COLOR' },
-  // ... more colors
-}
-```
-
-### Changing Fonts
-
-1. Update `app/layout.js`:
-
-```javascript
-import { YourFont } from "next/font/google";
-
-const yourFont = YourFont({
-  subsets: ["latin"],
-  variable: "--font-your-font",
-});
-```
-
-1. Update `tailwind.config.js`:
-
-```javascript
-fontFamily: {
-  yourFont: ['var(--font-your-font)', 'sans-serif'],
-}
-```
-
-### Changing Breakpoints
-
-Edit `tailwind.config.js`:
-
-```javascript
-screens: {
-  sm: '640px',
-  md: '768px',
-  lg: '1024px',  // Changed from 960px
-  xl: '1280px',  // Changed from 1200px
-}
-```
-
-### Adding New Sections
-
-1. Create component:
-
-```javascript
-// components/Testimonials.jsx
-export default function Testimonials() {
-  return <section id="testimonials">...</section>;
-}
-```
-
-1. Add to homepage:
-
-```javascript
-// app/page.js
-import Testimonials from "../components/Testimonials";
-
-export default function Home() {
-  return (
-    <main>
-      {/* ... existing components */}
-      <Testimonials />
-    </main>
-  );
-}
-```
-
-1. Add to navigation:
-
-```javascript
-// components/Nav.jsx
-const links = [
-  // ... existing links
-  {
-    path: "testimonials",
-    name: "testimonials",
-    offset: -50,
-  },
-];
-```
-
----
-
-## 🚢 Deployment
-
-### Vercel (Recommended)
-
-1. Push code to GitHub
-2. Import project in [Vercel](https://vercel.com)
-3. Configure build settings:
-   - Framework Preset: Next.js
-   - Build Command: `npm run build`
-   - Output Directory: `.next`
-4. Deploy
-
-**Vercel automatically:**
-
-- Detects Next.js
-- Optimizes builds
-- Provides CDN
-- Handles environment variables
-
-### Netlify
-
-1. Push code to GitHub
-2. Import project in [Netlify](https://netlify.com)
-3. Configure:
-   - Build command: `npm run build`
-   - Publish directory: `.next`
-4. Deploy
-
-### Other Platforms
-
-**AWS Amplify:**
-
-- Connect repository
-- Auto-detects Next.js
-- Configure build settings
-
-**DigitalOcean App Platform:**
-
-- Connect GitHub repository
-- Select Node.js environment
-- Configure build and run commands
-
-**Self-Hosting:**
-
-```bash
-npm run build
-npm start
-```
-
----
-
-## 📖 Learning Resources
-
-### Next.js Documentation
-
-- [Next.js Docs](https://nextjs.org/docs)
-- [App Router Guide](https://nextjs.org/docs/app)
-- [Image Optimization](https://nextjs.org/docs/app/building-your-application/optimizing/images)
-- [Font Optimization](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
-
----
-
-### React Resources
-
-- [React Documentation](https://react.dev)
-- [React Hooks](https://react.dev/reference/react)
-- [React Patterns](https://reactpatterns.com)
-
----
-
-### TailwindCSS Resources
-
-- [TailwindCSS Docs](https://tailwindcss.com/docs)
-- [TailwindCSS Components](https://tailwindui.com)
-
----
-
-### Framer Motion
-
-- [Framer Motion Docs](https://www.framer.com/motion/)
-- [Animation Examples](https://www.framer.com/motion/examples/)
-
----
-
-### React-Leaflet
-
-- [React-Leaflet Docs](https://react-leaflet.js.org/)
-- [Leaflet Docs](https://leafletjs.com/)
-
----
-
-### Radix UI
-
-- [Radix UI Docs](https://www.radix-ui.com/)
-- [Component Examples](https://www.radix-ui.com/primitives)
-
----
-
-## 🔑 Keywords
-
-**Framework & Libraries:**
-
-- Next.js, React, JavaScript, ES6+, App Router, Server Components
-
-**Styling:**
-
-- TailwindCSS, CSS, Responsive Design, Mobile-First, Utility-First CSS
-
-**Animation:**
-
-- Framer Motion, Animations, Transitions, Scroll Animations
-
-**UI/UX:**
-
-- Modern UI, User Interface, User Experience, Interactive Design
-
-**Features:**
-
-- Restaurant Website, Menu Display, Reservation System, Interactive Map, Smooth Scrolling
-
-**Development:**
-
-- Static Site Generation, Server-Side Rendering, Code Splitting, Performance Optimization
-
-**Tools:**
-
-- Vercel, Deployment, Git, npm, Package Management
-
-**Learning:**
-
-- Tutorial, Educational, Learning Project, Code Examples, Best Practices
-
----
-
-## 🎓 Conclusion
-
-This project demonstrates modern web development practices using Next.js 14, React, and TailwindCSS. It showcases:
-
-- **Component-Based Architecture**: Reusable, maintainable components
-- **Performance Optimization**: Image optimization, code splitting, font optimization
-- **Modern Animations**: Smooth, engaging user experiences
-- **Responsive Design**: Mobile-first approach with breakpoints
-- **SEO Best Practices**: Comprehensive metadata and Open Graph tags
-- **Accessibility**: Semantic HTML and ARIA labels
-- **Developer Experience**: Clean code, educational comments, best practices
-
-### What You've Learned
-
-By exploring this project, you've gained experience with:
-
-1. Next.js App Router and file-based routing
-2. React Server Components and Client Components
-3. TailwindCSS utility-first styling
-4. Framer Motion animations
-5. React-Leaflet map integration
-6. Form handling with Radix UI
-7. Responsive design patterns
-8. Performance optimization techniques
-9. SEO and metadata configuration
-10. Component reusability and composition
-
-### Next Steps
-
-1. **Extend Functionality**: Add backend API, database integration
-2. **Add More Pages**: Create About, Menu, Contact pages
-3. **Enhance Animations**: Experiment with different animation patterns
-4. **Add Testing**: Implement unit and integration tests
-5. **Optimize Further**: Add analytics, improve performance metrics
-6. **Customize Design**: Create your own color scheme and branding
-
-### Contributing
-
-Feel free to:
-
-- Fork the repository
-- Create feature branches
-- Submit pull requests
-- Report issues
-- Suggest improvements
+This repository is a **frontend-only**, **single-page** restaurant landing site built with Next.js 15, TypeScript, TailwindCSS, and Framer Motion. It has **no backend or API**; all data is in the repo under `data/` and `types/`. It is suitable for learning the App Router, client components, animations, and responsive layout, and can be extended with a backend, CMS, or analytics later. Use the Live Demo link above to see it in action and the Table of Contents to jump to any section of this README.
 
 ---
 
@@ -1514,3 +319,5 @@ If you have any questions or want to share your work, reach out via GitHub or my
 **Enjoy building and learning!** 🚀
 
 Thank you! 😊
+
+---

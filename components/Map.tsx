@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Map – Interactive Leaflet map with markers and popups.
+ * Uses react-leaflet; marker data from data/mapMarkers.ts. Only run on client (imported via MapDynamic with ssr: false).
+ */
 import { fadeIn } from "@/lib/variants";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -9,12 +13,14 @@ import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { mapMarkers } from "@/data/mapMarkers";
 
+/** Custom pin icon for markers (replaces default Leaflet marker). */
 const customIcon = new Icon({
   iconUrl: "/pin-solid.svg",
   iconSize: [40, 40],
 });
 
 export default function Map() {
+  /** Responsive: smaller height and zoom on mobile for better UX */
   const isMobile = useMediaQuery({ query: "(max-width:768px)" });
 
   return (
@@ -32,6 +38,7 @@ export default function Map() {
         className={`${isMobile ? "h-[300px]" : "h-[900px]"} z-10`}
         zoomControl={false}
       >
+        {/* CartoDB light tiles; attribution required by OpenStreetMap */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"

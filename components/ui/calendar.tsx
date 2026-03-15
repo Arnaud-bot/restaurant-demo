@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Calendar – react-day-picker wrapped with Tailwind and button variants for nav/month/day cells.
+ * mode="single" for one date; selected/onSelect controlled by parent (e.g. ReservationForm).
+ */
 import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayPicker } from "react-day-picker";
@@ -8,6 +12,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
+/** Tailwind class names for DayPicker layout and states (selected, today, outside, disabled) */
 const defaultClassNames = {
   months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
   month: "space-y-4",

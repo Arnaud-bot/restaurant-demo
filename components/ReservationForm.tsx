@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * ReservationForm – Form fields: first/last name, date picker (Popover + react-day-picker), person count (Select).
+ * No submit handler yet; form is presentational. date-fns format() displays selected date as "PPP" (e.g. "April 29th, 2025").
+ */
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
@@ -38,6 +42,7 @@ export default function ReservationForm() {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
           <div>
             <Label>date</Label>
+            {/* Radix Popover wraps trigger (button) and content (Calendar); asChild forwards props to Button */}
             <Popover>
               <PopoverTrigger asChild>
                 <Button
@@ -60,6 +65,7 @@ export default function ReservationForm() {
           </div>
           <div>
             <Label>person</Label>
+            {/* Radix Select: trigger shows placeholder/value; SelectContent lists options (1–5 people) */}
             <Select>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="How many people ?" />

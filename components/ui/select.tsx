@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Select – Radix Select wrapper: Root, Trigger, Content (portal), Group, Label, Item.
+ * Used for "person" count in ReservationForm. Trigger shows placeholder or value; ItemIndicator shows check on selected item.
+ */
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";

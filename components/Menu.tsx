@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Menu – Displays featured dishes in a responsive grid.
+ * Data from data/menu.ts (img, title, price). Hover scales image via group-hover.
+ */
 import { fadeIn } from "@/lib/variants";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -14,6 +18,7 @@ export default function Menu() {
       id="menu"
     >
       <div className="container mx-auto">
+        {/* Section title + "View all" link; animates from left */}
         <motion.div
           variants={fadeIn("left", 0.3)}
           initial="hidden"

@@ -1,5 +1,6 @@
 import tailwindcssAnimate from "tailwindcss-animate";
 
+/** Tailwind config: content paths, theme (colors, fonts, backgrounds, shadows), tailwindcss-animate for Radix open/close. */
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],

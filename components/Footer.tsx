@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Footer – Site footer: logo, three link columns (Blog, New Item, Socials), and copyright.
+ * Background from tailwind theme (bg-footer). All links currently point to /.
+ */
 import { fadeIn } from "@/lib/variants";
 import { motion } from "framer-motion";
 import Image from "next/image";

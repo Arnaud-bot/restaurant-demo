@@ -1,5 +1,8 @@
 "use client";
 
+/**
+ * Label – Accessible label wrapping Radix Label. Use htmlFor to associate with form controls (Input, etc.).
+ */
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { cva } from "class-variance-authority";

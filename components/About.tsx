@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * About – Two-column section: text (heading + paragraphs + CTA) and image.
+ * Framer Motion: text fades in from right, image from left. Image hidden on mobile (xl:block).
+ */
 import { fadeIn } from "@/lib/variants";
 import { motion } from "framer-motion";
 import Image from "next/image";

@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * NavMobile – Hamburger menu for small screens. Toggle opens a full-screen overlay with logo, scroll links (with icons), and CTA.
+ * Links from data/navMobileLinks.tsx. Closing overlay on link click for better UX.
+ */
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,6 +36,7 @@ export default function NavMobile({
       >
         <RiMenu2Line className="text-3xl text-white transition-all duration-200" />
       </button>
+      {/* Overlay: slides in from right when isOpen. Fixed full viewport. */}
       <aside
         className={`${isOpen ? "right-0" : "-right-full"} bg-black fixed z-20 w-full p-10 top-0 bottom-0 transition-all duration-500`}
       >

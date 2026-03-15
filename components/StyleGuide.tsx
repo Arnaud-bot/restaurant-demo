@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * StyleGuide – Demo page for typography, links, buttons, inputs, date picker, and select.
+ * Used for design reference; not linked from main nav. Same UI primitives as ReservationForm.
+ */
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -25,6 +29,7 @@ export default function StyleGuide() {
 
   return (
     <>
+      {/* Light section: headings, paragraph, link */}
       <div className="flex flex-col gap-y-4 p-24">
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -37,6 +42,7 @@ export default function StyleGuide() {
         </p>
         <Link href="/">Link</Link>
       </div>
+      {/* Dark section: buttons (variants/sizes), inputs, date popover, select */}
       <div className="bg-black p-24 flex flex-col gap-y-4">
         <Link href="/">Link</Link>
         <Button variant="default">Button 1</Button>

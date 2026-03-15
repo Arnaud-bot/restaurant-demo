@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Nav – Desktop navigation: react-scroll Links that smooth-scroll to section IDs (home, menu, about, contact).
+ * Props allow parent to pass container and link class names (e.g. from Header).
+ */
 import { Link } from "react-scroll";
 import { navLinks } from "@/data/navLinks";
 

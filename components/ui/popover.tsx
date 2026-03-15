@@ -1,5 +1,8 @@
 "use client";
 
+/**
+ * Popover – Radix Popover: Root, Trigger, Content (rendered in Portal). Used to anchor the Calendar next to the date button.
+ */
 import * as React from "react";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import { cn } from "@/lib/utils";

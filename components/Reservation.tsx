@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Reservation – Book-a-table section: dark card with heading and ReservationForm.
+ * Section fades in on scroll; inner card has a slight delay for staggered effect.
+ */
 import { fadeIn } from "@/lib/variants";
 import { motion } from "framer-motion";
 import ReservationForm from "./ReservationForm";

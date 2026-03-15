@@ -1,3 +1,7 @@
+/**
+ * Home Page (route: /) – Single-page layout composing all sections.
+ * No API calls; all content is static. MapDynamic loads the map only on the client (Leaflet needs window).
+ */
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";

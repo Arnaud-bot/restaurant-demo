@@ -1,3 +1,7 @@
+/**
+ * Framer Motion animation variants used site-wide (Hero, Menu, About, Footer, Map, Reservation).
+ * hidden = starting state (offset by direction, opacity 0); show = final state (opacity 1, no offset).
+ */
 import type { Variants } from "framer-motion";
 import type { FadeDirection } from "@/types";
 

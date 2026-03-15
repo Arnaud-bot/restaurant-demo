@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Hero – Top section with headline, byline, and imagery.
+ * Framer Motion: fadeIn variants from lib/variants; animations trigger when in view (whileInView).
+ */
 import { fadeIn } from "@/lib/variants";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -14,6 +18,7 @@ export default function Hero() {
       <div className="container mx-auto">
         <div className="flex items-center xl:h-[960px]">
           <div className="w-full xl:max-w-[460px] text-center xl:text-left">
+            {/* Staggered fade-in from bottom: direction "down", delay 0.2s. viewport.amount = 0.4 triggers when 40% visible. */}
             <motion.h1
               variants={fadeIn("down", 0.2)}
               initial="hidden"
@@ -52,6 +57,7 @@ export default function Hero() {
               <Button>Let&apos;s eat</Button>
             </motion.div>
           </div>
+          {/* Hero plate image: fades in from bottom (up), hidden on mobile, absolute on xl */}
           <motion.div
             variants={fadeIn("up", 0.8)}
             initial="hidden"
@@ -68,6 +74,7 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+      {/* Decorative coffee image: same variant, longer delay for staggered effect */}
       <motion.div
         variants={fadeIn("up", 1.2)}
         initial="hidden"

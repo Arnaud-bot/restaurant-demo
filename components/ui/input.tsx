@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Input – Styled text input for forms (e.g. first/last name). forwardRef allows parent to attach ref.
+ * Styles: dark-theme look (border-white/10, bg-white/5) with focus ring; accepts all native input props.
+ */
 import * as React from "react";
 import { cn } from "@/lib/utils";
 

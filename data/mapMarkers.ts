@@ -1,3 +1,7 @@
+/**
+ * Map markers for Leaflet: lat/lng, title, subtitle, and image for popup.
+ * Used by components/Map.tsx. Position array format: [latitude, longitude].
+ */
 import type { MapMarkerData } from "@/types";
 
 /** Map marker data: position [lat, lng], title, subtitle, image path */
