@@ -1,4 +1,4 @@
-# W'Foood | Restaurant Landing Page 1 - Next.js, JavaScript, TailwindCSS, Framer Motion Frontend Project
+# W'Foood | Restaurant Landing Page 1 - Next.js, TypeScript, TailwindCSS, Framer Motion Frontend Project
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=for-the-badge&logo=next.js)

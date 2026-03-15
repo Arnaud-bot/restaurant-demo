@@ -7,9 +7,11 @@
     @apply box-border;
   }
   body {
-    @apply font-poppins bg-body text-black tracking-[0.5px]
+    @apply font-poppins bg-body text-black tracking-[0.5px];
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     @apply font-lora font-bold;
   }
   h1 {
