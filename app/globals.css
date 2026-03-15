@@ -6,6 +6,9 @@
   * {
     @apply box-border;
   }
+  html {
+    @apply bg-body;
+  }
   body {
     @apply font-poppins bg-body text-black tracking-[0.5px];
   }
