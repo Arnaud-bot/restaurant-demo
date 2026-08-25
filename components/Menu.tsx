@@ -8,7 +8,6 @@ import { fadeIn } from "@/lib/variants";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import { menuItems } from "@/data/menu";
 
 export default function Menu() {
@@ -24,16 +23,10 @@ export default function Menu() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.2 }}
-          className="max-w-[570px] mx-auto text-center xl:text-right"
+          className="max-w-[570px] mx-auto text-center xl:text-right mb-16"
         >
           <h2 className="mb-3">Favorite Menu</h2>
-          <Link
-            href="/"
-            className="text-green flex justify-center xl:justify-end items-center mb-16"
-          >
-            View all
-            <IoIosArrowRoundForward className="text-3xl" />
-          </Link>
+          <p>A selection from LUMA&apos;s seasonal Mediterranean menu.</p>
         </motion.div>
         <motion.div
           variants={fadeIn("up", 0.4)}

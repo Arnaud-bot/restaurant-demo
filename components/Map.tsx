@@ -33,8 +33,8 @@ export default function Map() {
       className="relative xl:after:w-full xl:after:h-[240px] xl:after:bg-gradient-to-b xl:after:from-white xl:after:via-white/80 xl:after:to-white/20 xl:after:absolute xl:after:top-0 xl:after:z-20"
     >
       <MapContainer
-        center={[34.052235, -118.243683]}
-        zoom={isMobile ? 10 : 12}
+        center={[25.2076, 55.2551]}
+        zoom={isMobile ? 13 : 15}
         className={`${isMobile ? "h-[300px]" : "h-[900px]"} z-10`}
         zoomControl={false}
       >

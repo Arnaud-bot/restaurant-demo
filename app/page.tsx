@@ -15,9 +15,9 @@ export default function Home() {
     <main className="w-full max-w-[1440px] bg-white mx-auto overflow-hidden">
       <Header />
       <Hero />
+      <About />
       <Menu />
       <Reservation />
-      <About />
       <MapDynamic />
       <Footer />
     </main>
