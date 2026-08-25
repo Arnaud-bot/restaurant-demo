@@ -6,7 +6,6 @@
  */
 import { fadeIn } from "@/lib/variants";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -21,8 +20,11 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="flex flex-col justify-between xl:flex-row">
           <div className="w-[300px] mb-8 xl:mb-0">
-            <Link href="/">
-              <Image src="/logo.svg" width={90} height={36} alt="W'Food" />
+            <Link
+              href="/"
+              className="font-serif text-2xl font-semibold tracking-wide text-white"
+            >
+              LUMA <span className="text-orange">Dubai</span>
             </Link>
           </div>
           <div className="flex-1 grid grid-cols-1 xl:grid-cols-3 gap-[50px] mb-8 xl:mb-16">

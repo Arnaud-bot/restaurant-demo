@@ -22,20 +22,17 @@ export default function About() {
         viewport={{ once: false, amount: 0.2 }}
         className="xl:pl-[135px]"
       >
-        <h1 className="mb-9">Let&apos;s Talk About W&apos;Food</h1>
+        <h1 className="mb-9">Let&apos;s Talk About LUMA</h1>
         <p className="mb-8">
-          Mauris nam et ipsum ipsum in. Risus nullam in sit mi est justo at
-          fringilla. Consequat ac fringilla quis enim, sit ipsum. Laoreet eget
-          metus morbi convallis gravida elementum facilisis. Neque enim quis
-          fusce amet. Pellentesque netus vel eu
+          LUMA was born from a simple idea: Mediterranean cooking doesn&apos;t
+          need reinventing, just honest ingredients and room to breathe. Our
+          kitchen sources daily from local markets and lets the produce lead
+          the menu, season by season.
         </p>
         <p className="mb-10">
-          posuere ultrices facilisi. Senectus velit lobortis velit arcu varius
-          lectus mattis. Dictum aenean duis aliquet Tortor purus egestas urna
-          scelerisque vel ornare lectus ultricies. Nisi, eu ut ultricies enim
-          enim amet porttitor. Volutpat ac tellus volutpat eget volutpat orci
-          enim, ut a. Turpis adipiscing eleifend dignissim viverra euismod
-          ultrices.
+          From the open kitchen to the last table by the window, every detail
+          of the dining room was designed around one goal: a night out that
+          feels unhurried, in the middle of Dubai.
         </p>
         <Button>Read more</Button>
       </motion.div>
@@ -49,7 +46,7 @@ export default function About() {
           src="/about/img.png"
           width={705}
           height={771}
-          alt="About W'Food"
+          alt="LUMA Dubai dining room"
           className="hidden xl:block"
         />
       </motion.div>

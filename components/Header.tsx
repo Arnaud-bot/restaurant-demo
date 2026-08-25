@@ -5,7 +5,6 @@
  * Uses scroll state to switch from transparent to solid background after 100px.
  */
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import Nav from "./Nav";
@@ -32,8 +31,11 @@ export default function Header() {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Next.js Link + Image for client-side nav and optimized image */}
-          <Link href="/">
-            <Image src="/logo.svg" width={75} height={30} alt="W'Food logo" />
+          <Link
+            href="/"
+            className="font-serif text-2xl font-semibold tracking-wide text-white"
+          >
+            LUMA <span className="text-orange">Dubai</span>
           </Link>
           {/* Desktop nav: hidden on small screens, visible from xl. ScrollLink scrolls to #reservation. */}
           <Nav

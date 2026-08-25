@@ -26,7 +26,7 @@ export default function Hero() {
               viewport={{ once: false, amount: 0.4 }}
               className="text-white mb-7"
             >
-              A taste of local <br /> flavours
+              Contemporary Mediterranean <br /> dining
             </motion.h1>
             <motion.p
               variants={fadeIn("down", 0.4)}
@@ -35,7 +35,7 @@ export default function Hero() {
               viewport={{ once: false, amount: 0.4 }}
               className="text-white font-semibold mb-7"
             >
-              by: <span className="text-orange">Wildan Wari</span>
+              <span className="text-orange">Dubai</span> · Fine Dining
             </motion.p>
             <motion.p
               variants={fadeIn("down", 0.6)}
@@ -44,9 +44,9 @@ export default function Hero() {
               viewport={{ once: false, amount: 0.4 }}
               className="text-white mb-12 max-w-lg mx-auto xl:max-w-none xl:mx-0"
             >
-              Posuere amet, sed vitae condimentum accumsan aliquam et, aliquam.
-              Tellus in fusce vel gravida lobortis diam dis ut. Bibendum
-              senectus urna, in ultricies sed lorem natoque. Risus pharetra
+              LUMA brings the flavours of the Mediterranean coast to Dubai —
+              seasonal ingredients, an open kitchen, and a dining room built
+              for long, unhurried evenings.
             </motion.p>
             <motion.div
               variants={fadeIn("down", 0.8)}

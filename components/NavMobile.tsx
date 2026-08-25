@@ -5,7 +5,6 @@
  * Links from data/navMobileLinks.tsx. Closing overlay on link click for better UX.
  */
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { RiMenu2Line } from "react-icons/ri";
 import { IoCloseOutline } from "react-icons/io5";
@@ -49,8 +48,11 @@ export default function NavMobile({
           >
             <IoCloseOutline />
           </button>
-          <Link href="/">
-            <Image src="/logo.svg" width={90} height={36} alt="W'Food" />
+          <Link
+            href="/"
+            className="font-serif text-2xl font-semibold tracking-wide text-white"
+          >
+            LUMA <span className="text-orange">Dubai</span>
           </Link>
           <div className="flex flex-col gap-y-8">
             {navMobileLinks.map((link) => (
